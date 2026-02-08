@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For You ❤️</title>
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #ff4d6d, #ffb3c6);
+      font-family: Arial, sans-serif;
+    }
+
+    .box {
+      text-align: center;
+      color: white;
+      padding: 30px;
+    }
+
+    h1 {
+      font-size: 55px;
+      margin: 0;
+      display: none;
+      text-shadow: 0 5px 20px rgba(0,0,0,0.3);
+      animation: pop 0.8s infinite alternate;
+    }
+
+    p {
+      font-size: 18px;
+      display: none;
+      margin-top: 15px;
+      opacity: 0.9;
+    }
+
+    @keyframes pop {
+      from { transform: scale(1); }
+      to { transform: scale(1.1); }
+    }
+
+    button {
+      padding: 14px 26px;
+      border: none;
+      border-radius: 30px;
+      font-size: 16px;
+      cursor: pointer;
+      background: white;
+      color: #ff4d6d;
+      font-weight: bold;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+      transition: 0.2s;
+    }
+
+    button:hover {
+      transform: scale(1.08);
+    }
+
+    .heart {
+      position: absolute;
+      font-size: 25px;
+      animation: float 5s linear infinite;
+      opacity: 0.8;
+    }
+
+    @keyframes float {
+      from {
+        transform: translateY(100vh);
+        opacity: 1;
+      }
+      to {
+        transform: translateY(-10vh);
+        opacity: 0;
+      }
+    }
+
+    .confetti {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background: white;
+      animation: confettiFall 3s linear infinite;
+      opacity: 0.8;
+    }
+
+    @keyframes confettiFall {
+      from {
+        transform: translateY(-10vh) rotate(0deg);
+      }
+      to {
+        transform: translateY(110vh) rotate(360deg);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <button id="btn" onclick="startLove()">Klik ini dulu 😋</button>
+
+    <h1 id="loveText">I LOVE YOU ❤️</h1>
+    <p id="loveSub">Kamu cantik banget sumpah 🥺💖</p>
+  </div>
+
+  <audio id="music" loop>
+    <source src="lagu.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    function startLove() {
+      document.getElementById("btn").style.display = "none";
+      document.getElementById("loveText").style.display = "block";
+      document.getElementById("loveSub").style.display = "block";
+
+      //
